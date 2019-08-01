@@ -17,4 +17,6 @@ COPY target/*.jar /opt/tomcat/webapps/
 
 EXPOSE 8080
 
-CMD ["/opt/tomcat/bin/startup.sh &", "run"]
+#CMD ["/opt/tomcat/bin/startup.sh &", "run"]
+WORKDIR /opt/tomcat/bin
+RUN nohup sh startup.sh &
