@@ -11,9 +11,9 @@ RUN mv apache-tomcat-8.5.40/* /opt/tomcat/.
 RUN yum -y install java
 RUN java -version
 
-WORKDIR /opt/tomcat/webapps
+#WORKDIR /opt/tomcat/webapps
 #RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
-COPY target/*.jar /usr/local/tomcat/webapps/
+COPY target/*.jar /opt/tomcat/webapps
 
 EXPOSE 8080
 
